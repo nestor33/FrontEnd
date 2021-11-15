@@ -1,0 +1,83 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.header {
+  display: flex;
+  height: 80px;
+  background-color: bisque;
+  text-align: center;
+}
+.header_div {
+  width: 50%;
+  margin: auto;
+}
+.header_div_image {
+  height: 40px;
+  width: 40px;
+}
+.div_navbarAndObjects {
+  display: flex;
+}
+.div_navbarAndObjects_objects_h3 {
+  text-align: center;
+  color: brown;
+}
+.div_navbarAndObjects_mainDivNavbar {
+  width: 20%;
+}
+.div_navbarAndObjects_maimDivObjects {
+  width: 80%;
+}
+.div_navbarAndObjects_maimDivObjects_allObjectsDiv {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+}
+.div_navbarAndObjects_maimDivObjects_allObjectsDiv_oneObject {
+  width: 30%;
+  border-radius: 10%;
+  padding-left: 20px;
+}
+.div_navbarAndObjects_maimDivObjects_allObjectsDiv_oneObject img {
+  width: 30%;
+  height: 30%;
+  margin-left: 60px;
+}
+.div_navbarAndObjects_maimDivObjects_allObjectsDiv_oneObjectbutton {
+  margin-left: 30px;
+}
+.footer {
+  background-color: grey;
+  width: 100%;
+  height: 10px;
+  margin-top: 400px;
+  flex: 1;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: white;
+}
+li a {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+li a:hover {
+  background-color: grey;
+  color: white;
+}
+.div_navbarAndObjects_maimDivObjects_allObjectsDiv :hover {
+  background-color: #555;
+  color: white;
+}
+.header_div :hover {
+  background-color: cadetblue;
+  color: white;
+}
