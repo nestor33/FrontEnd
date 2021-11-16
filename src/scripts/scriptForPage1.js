@@ -64,10 +64,12 @@ function AddProduct() {
 //Counter
 let i = 0;
 let counter = document.querySelector('.counter');
-let addButton = document.querySelector('.addButton');
-addButton.addEventListener('click', () => {
-  if (sessionStorage.length != null) {
-    i = sessionStorage.length;
-    counter.textContent = `Counter: ${i.toString()}`;
-  } else counter.textContent = `Counter: 0`;
+let addButtons = document.querySelectorAll('.addButton');
+addButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    if (sessionStorage.length != null) {
+      i = sessionStorage.length;
+      counter.textContent = `Counter: ${i.toString()}`;
+    } else counter.textContent = `Counter: 0`;
+  });
 });
