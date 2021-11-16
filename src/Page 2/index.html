@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="./customButton.js"></script>
     <link rel="stylesheet" href="./index.css">
     <title>Page 2</title>
     <link rel="stylesheet" href="./index.css" />
@@ -38,9 +39,10 @@
       <li><a href="#products">Products</a></li>
       <li><a href="./../Page 2/index.html">Add new product ++</a></li>
       <li><a href="#about">About</a></li>
+    </ul>
 </div>
 
-<div class="Inputs_addProducts">
+<div class="Inputs_addProducts" onclick="{}">
   <form>
     <input type="text" 
         placeholder="Name" 
@@ -56,16 +58,19 @@
     placeholder="Description" 
      />
 <br /><br />
+<input name="myFile" type="file"  placeholder="Photo">
+<br /><br />
 
     <input type="reset" value="Reset" 
         style="background-color: gray; 
                 color: white" />
-    <input type="submit" value="Submit" 
-        style="background-color: rgb(4, 163, 4); 
+    <input type="submit" value="Submit"
+    class="submitButton" 
+        style="background-color: green; 
                 color: white" />
 </form>
 </div>
-    
+    </div>
 </div>
     </div>
 
@@ -73,6 +78,20 @@
       <h4>About us:</h4>
     </footer>
 
-    </ul>
+  
+<script>
+const submitButton  = document.getElementsByClassName('submitButton');
+submitButton.addEventListener('click', ()=>{
+  let inputName = (document.getElementsByTagName("input").placeholder = "Name")
+  let newProduct = {
+    Name:submitButton.value 
+  }
+  localStorage.setItem("newProduct", JSON.stringify(products));
+});
+
+
+
+</script>
+   
   </body>
 </html>

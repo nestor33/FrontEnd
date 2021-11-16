@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
+  <body  onload="Do()">
     <header class="header">
         <div class="header_div">
             <a href="./../Page 1/index.html">
@@ -28,7 +28,7 @@
         </div>
       </header>
   
-      <div class="div_inpustAndNavbar" >
+      <div class="div_inpustAndNavbar" style="display: flex;" >
   <div class="navbar">
       
       <ul>
@@ -37,8 +37,26 @@
         <li><a href="./../Page 2/index.html">Add new product ++</a></li>
         <li><a href="#about">About</a></li>
   </div>
+  <div class="container"></div>
+</div>
+
   <footer class="footer"> 
     <h4>About us:</h4>
   </footer>
+
+  <script> 
+function Do(){
+    let array = JSON.parse(localStorage.products)
+    let chosenObject = array.filter(el=>el.id == sessionStorage.id)
+    var imageSrc = chosenObject[0].imgSrc
+    console.log(imageSrc)
+
+           var list = "<div class = 'chosenFiles' ><h2>Name: "+chosenObject[0].Name+"</h2><img src="+imageSrc+"> <p>Id: "+chosenObject[0].id+"</p> </div>";
+           //var list = "<tr><th>Item</th><th>Value</th></tr>\n";
+           
+             document.querySelector('.container').innerHTML = list;
+}
+
+       </script>
   </body>
 </html>

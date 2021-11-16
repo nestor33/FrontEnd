@@ -45,3 +45,14 @@ li a:hover {
   background-color: cadetblue;
   color: white;
 }
+.chosenFiles {
+  padding-left: 10px;
+  margin-top: 50px;
+  border-radius: 10px;
+  border: bisque;
+  border-style: ridge;
+}
+.chosenFiles img {
+  width: 100px;
+  height: 100px;
+}
