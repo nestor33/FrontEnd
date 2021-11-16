@@ -44,18 +44,8 @@
     <h4>About us:</h4>
   </footer>
 
-  <script> 
-function Do(){
-    let array = JSON.parse(localStorage.products)
-    let chosenObject = array.filter(el=>el.id == sessionStorage.id)
-    var imageSrc = chosenObject[0].imgSrc
-    console.log(imageSrc)
+  <script src="./../scripts/scriptForPage3.js"> 
 
-           var list = "<div class = 'chosenFiles' ><h2>Name: "+chosenObject[0].Name+"</h2><img src="+imageSrc+"> <p>Id: "+chosenObject[0].id+"</p> </div>";
-           //var list = "<tr><th>Item</th><th>Value</th></tr>\n";
-           
-             document.querySelector('.container').innerHTML = list;
-}
 
        </script>
   </body>

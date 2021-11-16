@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style></style>
   </head>
-  <body>
+  <body onload="AddProduct()">
     <header class="header">
       <div class="header_div">
         <a href="./index.html">
@@ -34,11 +34,15 @@
           <li>
             <a href="./index.html">Home</a>
           </li>
-          <li><a href="#products">Products</a></li>
+          <li class="Name1">
+            <a>Name1</a>
+          </li>
+          <li class="Name2">
+            <a>Name2</a>
+          </li>
           <li>
             <a href="./../Page 2/index.html">Add new product ++</a>
           </li>
-          <li><a href="#about">About</a></li>
         </ul>
       </div>
 
@@ -106,24 +110,13 @@
           </div>
         </div>
       </div>
+      <div class="counter">Counter: 0</div>
     </div>
 
     <footer class="footer">
       <h4>About us:</h4>
     </footer>
-    <script>
-      document.querySelectorAll(".addButton").forEach((button) => {
-        button.addEventListener("click", (event) => {
-          let buttonId = event.target.parentNode.getAttribute("id");
-          console.log(buttonId);
-          products.forEach((element) => {
-            if (element.id == buttonId) {
-              event.target.innerHTML = "Added";
-              sessionStorage.setItem("id", element.id);
-            }
-          });
-        });
-      });
-    </script>
+
+    <script src="./../scripts/scriptForPage1.js"></script>
   </body>
 </html>

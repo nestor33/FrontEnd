@@ -81,3 +81,11 @@ li a:hover {
   background-color: cadetblue;
   color: white;
 }
+
+.counter {
+  width: 130px;
+  height: 20px;
+  background-color: beige;
+  border-radius: 10px;
+  margin: 50px;
+}

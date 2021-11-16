@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="./customButton.js"></script>
-    <link rel="stylesheet" href="./index.css">
+      <link rel="stylesheet" href="./index.css">
     <title>Page 2</title>
     <link rel="stylesheet" href="./index.css" />
     <meta charset="UTF-8" />
@@ -43,19 +42,23 @@
 </div>
 
 <div class="Inputs_addProducts" onclick="{}">
-  <form>
+
+  <form onsubmit="submitForm(event, this)">
     <input type="text" 
         placeholder="Name" 
+        name="formName"
      />
     <br /><br />
 
     <input type="text" 
-        placeholder="Options" id="pin" 
+        placeholder="Options" 
+        name="formOptions"
         />
     <br /><br />
     
     <input type="text" 
     placeholder="Description" 
+    name="formDescription"
      />
 <br /><br />
 <input name="myFile" type="file"  placeholder="Photo">
@@ -78,20 +81,7 @@
       <h4>About us:</h4>
     </footer>
 
-  
-<script>
-const submitButton  = document.getElementsByClassName('submitButton');
-submitButton.addEventListener('click', ()=>{
-  let inputName = (document.getElementsByTagName("input").placeholder = "Name")
-  let newProduct = {
-    Name:submitButton.value 
-  }
-  localStorage.setItem("newProduct", JSON.stringify(products));
-});
+<script src="./../Scripts/ScriptForPage2.js"></script>
 
-
-
-</script>
-   
   </body>
 </html>
