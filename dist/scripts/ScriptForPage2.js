@@ -2,8 +2,8 @@
 function submitForm(e, form) {
   e.preventDefault();
   var newObject = {
+    id: form.formName.value,
     Name: form.formName.value,
-    Options: form.formOptions.value,
     Description: form.formDescription.value,
     imgSrc: "./../../images/cactus.svg",
   };
@@ -12,6 +12,10 @@ function submitForm(e, form) {
   console.log(form.formOptions.value);
   console.log(form.formDescription.value);
 
+  let products = JSON.parse(localStorage.getItem("products"));
+
+  products.push(newObject);
+
+  localStorage.setItem("products", JSON.stringify(products));
   //put to session storage
-  sessionStorage.setItem(`${newObject.Name}`, JSON.stringify(newObject));
 }
