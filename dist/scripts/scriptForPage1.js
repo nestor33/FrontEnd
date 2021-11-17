@@ -36,7 +36,7 @@ document.querySelectorAll(".addButton").forEach((button) => {
     products.forEach((element) => {
       if (element.id == buttonId) {
         event.target.innerHTML = "Added";
-        sessionStorage.setItem("id", element.id);
+        sessionStorage.setItem(element.id, element.id);
       }
     });
   });
@@ -44,15 +44,38 @@ document.querySelectorAll(".addButton").forEach((button) => {
 
 //Add new product
 function AddProduct() {
-  let array = JSON.parse(sessionStorage.newObject);
-  console.log(array);
+  for (const [key, value] of Object.entries(sessionStorage)) {
+    let name = JSON.parse(sessionStorage.getItem(key)).Name;
+    let options = JSON.parse(sessionStorage.getItem(key)).Options;
+    let description = JSON.parse(sessionStorage.getItem(key)).Description;
+    console.log({ key });
 
+    let div =
+      "<div class='div_navbarAndObjects_maimDivObjects_allObjectsDiv_oneObject' id='7'>";
+    let h2img =
+      "<h2>" +
+      name +
+      "</h2> <img src='./images/cactus.svg' class='' alt='' /> <p>Options:" +
+      options +
+      "</p><p>Description:" +
+      description +
+      "</p>";
+    let buttons =
+      "<button type='button' class='addButton'>Add</button> <custom-button></custom-button></div>";
+    let list = div + h2img + buttons;
+    let currentEl = document.querySelector(
+      ".div_navbarAndObjects_maimDivObjects_allObjectsDiv"
+    );
+    console.log(currentEl);
+    currentEl.innerHTML += list;
+  }
+  console.log(array);
   let div =
     "<div class='div_navbarAndObjects_maimDivObjects_allObjectsDiv_oneObject' id='7'>";
   let h2img =
     "<h2>" +
     array.Name +
-    "</h2> <img src='./../../images/cactus.svg' class='' alt='' /> <p>Options:" +
+    "</h2> <img src='./images/cactus.svg' class='' alt='' /> <p>Options:" +
     array.Options +
     "</p><p>Description:" +
     array.Description +

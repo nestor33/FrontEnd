@@ -13,5 +13,5 @@ function submitForm(e, form) {
   console.log(form.formDescription.value);
 
   //put to session storage
-  sessionStorage.setItem("newObject", JSON.stringify(newObject));
+  sessionStorage.setItem(`${newObject.Name}`, JSON.stringify(newObject));
 }
