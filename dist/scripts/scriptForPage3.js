@@ -1,4 +1,4 @@
-//Add products in
+//Add products to Page 3
 function Do() {
   let array = JSON.parse(localStorage.products);
   for (const [key, value] of Object.entries(sessionStorage)) {
@@ -9,11 +9,11 @@ function Do() {
     var list =
       "<div class = 'chosenFiles' ><h2>Name: " +
       chosenObject[0].Name +
-      "</h2><img src=" +
+      '</h2><img src=' +
       imageSrc +
-      "> <p>Id: " +
+      '> <p>Id: ' +
       chosenObject[0].id +
-      "</p> </div>";
-    document.querySelector(".container").innerHTML += list;
+      '</p> </div>';
+    document.querySelector('.container').innerHTML += list;
   }
 }
