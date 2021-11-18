@@ -1,3 +1,4 @@
+import { Item } from "./interfaces";
 //Add products to Page 3
 document.addEventListener("DOMContentLoaded", function () {
   console.log("123");
@@ -6,10 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function Do() {
   let container = document.querySelector(".container");
-  let array = JSON.parse(localStorage.products);
+  let array: Item[] = JSON.parse(localStorage.products);
   console.log(array);
   for (const [key, value] of Object.entries(sessionStorage)) {
-    let chosenObject = array.filter((el: any) => el.id == JSON.parse(key));
+    let chosenObject = array.filter((el: Item) => el.id == JSON.parse(key));
     console.log(chosenObject);
     var imageSrc = chosenObject[0].imgSrc;
 

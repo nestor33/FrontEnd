@@ -1,3 +1,5 @@
+import { Item } from "./interfaces";
+
 document.addEventListener("DOMContentLoaded", function () {
   AddProduct();
 
@@ -43,17 +45,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let itemsProducts = localStorage.getItem("products");
         if (itemsProducts != null) {
-          let products = JSON.parse(itemsProducts);
+          let products: Item[] = JSON.parse(itemsProducts);
 
-          products.forEach((element: any) => {
-            if (element.id == buttonId) {
+          products.forEach((element) => {
+            if (element.id.toString() == buttonId) {
               let text = "Added";
 
-              if (sessionStorage.getItem(element.id)) {
-                sessionStorage.removeItem(element.id);
+              if (sessionStorage.getItem(element.id.toString())) {
+                sessionStorage.removeItem(element.id.toString());
                 text = "Add";
               } else {
-                sessionStorage.setItem(element.id, element.id);
+                sessionStorage.setItem(
+                  element.id.toString(),
+                  element.id.toString()
+                );
               }
               if (event.target) {
                 event.target.innerHTML = text;

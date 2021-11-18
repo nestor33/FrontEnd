@@ -1,4 +1,6 @@
-const form = document.getElementById("add-form");
+import { Item } from "./interfaces";
+
+const form = document.getElementById("add-form") as HTMLFormElement;
 //get values from form
 document.addEventListener("DOMContentLoaded", function () {
   console.log("form");
@@ -7,10 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", submitForm(form));
   }
 });
-function submitForm(form: any) {
+function submitForm(form: HTMLFormElement) {
   return function (e: any) {
     e.preventDefault();
-    var newObject = {
+    var newObject: Item = {
       id: form.formName.value,
       Name: form.formName.value,
       Description: form.formDescription.value,
