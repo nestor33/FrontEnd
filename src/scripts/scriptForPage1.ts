@@ -1,6 +1,40 @@
 document.addEventListener("DOMContentLoaded", function () {
   AddProduct();
 
+  let filterButtonName1 = document.querySelector(".Name1");
+  let filterButtonName2 = document.querySelector(".Name2");
+  let allProducts = document.querySelectorAll(
+    ".div_navbarAndObjects_maimDivObjects_allObjectsDiv_oneObject"
+  );
+
+  //Filter Name1
+  if (filterButtonName1) {
+    filterButtonName1.addEventListener("click", FilterName1);
+  }
+
+  function FilterName1() {
+    allProducts.forEach((product: any) => {
+      product.hidden = false;
+      if (product.id != 1) {
+        product.hidden = true;
+      }
+    });
+  }
+
+  //Filter Name2
+  if (filterButtonName2) {
+    filterButtonName2.addEventListener("click", FilterName2);
+  }
+
+  function FilterName2() {
+    allProducts.forEach((product: any) => {
+      product.hidden = false;
+      if (product.id != 2) {
+        product.hidden = true;
+      }
+    });
+  }
+
   document.querySelectorAll(".addButton").forEach((button) => {
     button.addEventListener("click", (event: any) => {
       if (event.target instanceof Element && event.target.parentElement) {
