@@ -4,7 +4,7 @@
   "description": "shop ",
   "main": "index.js",
   "scripts": {
-    "webpack": "webpack serve",
+    "webpack": "webpack && webpack serve",
     "test": "jest"
   },
   "repository": {
@@ -20,6 +20,8 @@
   "devDependencies": {
     "babel-plugin-rewire": "^1.2.0",
     "jest": "^27.3.1",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.2",
     "webpack": "^5.64.1",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.5.0"
