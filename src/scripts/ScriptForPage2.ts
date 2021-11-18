@@ -3,10 +3,12 @@ const form = document.getElementById("add-form");
 document.addEventListener("DOMContentLoaded", function () {
   console.log("form");
   console.log(form);
-  form.addEventListener("submit", submitForm(form));
+  if (form) {
+    form.addEventListener("submit", submitForm(form));
+  }
 });
-function submitForm(form) {
-  return function (e) {
+function submitForm(form: any) {
+  return function (e: any) {
     e.preventDefault();
     var newObject = {
       id: form.formName.value,
@@ -19,11 +21,14 @@ function submitForm(form) {
     console.log(form.formOptions.value);
     console.log(form.formDescription.value);
 
-    let products = JSON.parse(localStorage.getItem("products"));
+    let itemsProducts = localStorage.getItem("products");
+    if (itemsProducts) {
+      let products = JSON.parse(itemsProducts);
 
-    products.push(newObject);
+      products.push(newObject);
 
-    localStorage.setItem("products", JSON.stringify(products));
+      localStorage.setItem("products", JSON.stringify(products));
+    }
     //put to session storage
   };
 }

@@ -5,10 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function Do() {
+  let container = document.querySelector(".container");
   let array = JSON.parse(localStorage.products);
   console.log(array);
   for (const [key, value] of Object.entries(sessionStorage)) {
-    let chosenObject = array.filter((el) => el.id == JSON.parse(key));
+    let chosenObject = array.filter((el: any) => el.id == JSON.parse(key));
     console.log(chosenObject);
     var imageSrc = chosenObject[0].imgSrc;
 
@@ -20,6 +21,9 @@ function Do() {
       "> <p>Id: " +
       chosenObject[0].id +
       "</p> </div>";
-    document.querySelector(".container").innerHTML += list;
+
+    if (container) {
+      container.innerHTML += list;
+    }
   }
 }
