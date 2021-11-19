@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let filterButtonName2 = document.querySelector(".Name2");
   let allProducts = document.querySelectorAll(
     ".div_navbarAndObjects_maimDivObjects_allObjectsDiv_oneObject"
-  );
+  ) as NodeListOf<HTMLElement>;
 
   //Filter Name1
   if (filterButtonName1) {
@@ -15,9 +15,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function FilterName1() {
-    allProducts.forEach((product: any) => {
+    allProducts.forEach((product) => {
       product.hidden = false;
-      if (product.id != 1) {
+      if (parseInt(product.id) !== 1) {
         product.hidden = true;
       }
     });
@@ -29,16 +29,16 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function FilterName2() {
-    allProducts.forEach((product: any) => {
+    allProducts.forEach((product) => {
       product.hidden = false;
-      if (product.id != 2) {
+      if (parseInt(product.id) !== 2) {
         product.hidden = true;
       }
     });
   }
 
   document.querySelectorAll(".addButton").forEach((button) => {
-    button.addEventListener("click", (event: any) => {
+    button.addEventListener("click", (event) => {
       if (event.target instanceof Element && event.target.parentElement) {
         let buttonId = event.target.parentElement.getAttribute("id");
         console.log(buttonId);
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
               }
               if (event.target) {
-                event.target.innerHTML = text;
+                (event.target as HTMLElement).innerHTML = text;
               }
             }
           });
@@ -77,7 +77,7 @@ function AddProduct() {
   if (itemsProducts) {
     let products = JSON.parse(itemsProducts);
 
-    products.forEach((item: any) => {
+    products.forEach((item: Item) => {
       let name = item.Name;
       let options = item.Options;
       let description = item.Description;

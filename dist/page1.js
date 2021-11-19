@@ -1,10 +1,26 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
+/******/ 	// The require scope
+/******/ 	var __webpack_require__ = {};
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
 var __webpack_exports__ = {};
 /*!***************************************!*\
   !*** ./src/scripts/scriptForPage1.ts ***!
   \***************************************/
-
+__webpack_require__.r(__webpack_exports__);
 document.addEventListener("DOMContentLoaded", function () {
     AddProduct();
     var filterButtonName1 = document.querySelector(".Name1");
@@ -17,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function FilterName1() {
         allProducts.forEach(function (product) {
             product.hidden = false;
-            if (product.id != 1) {
+            if (parseInt(product.id) !== 1) {
                 product.hidden = true;
             }
         });
@@ -29,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function FilterName2() {
         allProducts.forEach(function (product) {
             product.hidden = false;
-            if (product.id != 2) {
+            if (parseInt(product.id) !== 2) {
                 product.hidden = true;
             }
         });
@@ -43,14 +59,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (itemsProducts != null) {
                     var products_1 = JSON.parse(itemsProducts);
                     products_1.forEach(function (element) {
-                        if (element.id == buttonId_1) {
+                        if (element.id.toString() == buttonId_1) {
                             var text = "Added";
-                            if (sessionStorage.getItem(element.id)) {
-                                sessionStorage.removeItem(element.id);
+                            if (sessionStorage.getItem(element.id.toString())) {
+                                sessionStorage.removeItem(element.id.toString());
                                 text = "Add";
                             }
                             else {
-                                sessionStorage.setItem(element.id, element.id);
+                                sessionStorage.setItem(element.id.toString(), element.id.toString());
                             }
                             if (event.target) {
                                 event.target.innerHTML = text;
@@ -93,6 +109,7 @@ function AddProduct() {
         });
     }
 }
+
 
 /******/ })()
 ;

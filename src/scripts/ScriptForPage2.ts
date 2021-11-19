@@ -10,9 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 function submitForm(form: HTMLFormElement) {
-  return function (e: any) {
+  return function (e: Event) {
     e.preventDefault();
-    var newObject: Item = {
+    var newObject = {
       id: form.formName.value,
       Name: form.formName.value,
       Description: form.formDescription.value,

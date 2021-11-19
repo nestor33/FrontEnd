@@ -36,7 +36,7 @@ const products = [
 ];
 
 //local storage set items
-function addToStorage(key: any, products: any) {
+function addToStorage(key: string, products: string) {
   if (!localStorage.getItem(key)) {
     localStorage.setItem(key, products);
   }
