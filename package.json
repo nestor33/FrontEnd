@@ -4,7 +4,7 @@
   "description": "shop ",
   "main": "index.js",
   "scripts": {
-    "webpack": "webpack && webpack serve",
+    "start": "webpack && webpack serve",
     "test": "jest"
   },
   "repository": {
